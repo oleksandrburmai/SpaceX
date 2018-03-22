@@ -1,11 +1,6 @@
 public class Main {
 
     public static void main(String[] args) {
-
-        int enginePower = Integer.parseInt(args[0]);
-        int rocketWeight = Integer.parseInt(args[1]);
-        String planetName = args[2];
-
-        System.out.println(new SpaceX().isSuccessfulFly(enginePower, rocketWeight, planetName));
+        System.out.println(new SpaceX().isSuccessfulFly(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2]));
     }
 }
