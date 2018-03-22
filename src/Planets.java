@@ -1,5 +1,3 @@
-package Enum;
-
 public enum Planets {
 
     MARS("Mars", 55757930), MOON("Moon", 384400);
@@ -10,10 +8,6 @@ public enum Planets {
     Planets(String planetName, int distance) {
         this.planetName = planetName;
         this.distance = distance;
-    }
-
-    public String getPlanetName() {
-        return this.planetName;
     }
 
     public int getDistance() {
