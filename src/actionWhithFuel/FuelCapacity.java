@@ -5,6 +5,6 @@ import java.util.Random;
 public interface FuelCapacity {
     default int fuelCapacity() {
         Random random = new Random();
-        return random.nextInt(10000 - 500);
+        return random.nextInt(100000 - 10000);
     }
 }
