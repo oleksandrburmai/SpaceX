@@ -1,38 +1,37 @@
 import java.util.Scanner;
 
 public class InputData {
-    Scanner scanner = new Scanner(System.in);
 
-    public String inputStr() {
-        Planets[] planets =Planets.values();
-        String[] str=new String[planets.length];
-        for (int i = 0; i <planets.length; i++) {
-            str[i]=planets[i].getPlanetName();
-        }
+    private Scanner scanner = new Scanner(System.in);
 
-        //String s="";
-        while (true){
-            for (int i = 0; i<str.length ; i++) {
-                if(str[i].equals(scanner.nextLine())){
-                    return scanner.nextLine();
-                }
-                else {
-                    System.out.println("Wrong planet name");
+    public String inputName() {
+        while (true) {
+            String s = scanner.nextLine();
+            for (int i = 0; i < allPlanetNameMassive().length; i++) {
+                if (allPlanetNameMassive()[i].equalsIgnoreCase(s)) {
+                    return s;
                 }
             }
+            System.out.println("Wrong planet name");
         }
     }
 
     public int inputNum() {
-        int num;
         while (true) {
             try {
-                num = Integer.parseInt(scanner.nextLine());
-                break;
+                return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException ex) {
                 System.out.println("You input wrong number. Try again");
             }
         }
-        return num;
+    }
+
+    private String[] allPlanetNameMassive() {
+        Enum.Planets[] planets = Enum.Planets.values();
+        String[] allPlanetNameMassive = new String[planets.length];
+        for (int i = 0; i < planets.length; i++) {
+            allPlanetNameMassive[i] = planets[i].getPlanetName();
+        }
+        return allPlanetNameMassive;
     }
 }

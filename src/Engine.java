@@ -1,3 +1,5 @@
+import Interface.FuelCapacity;
+
 import java.util.Random;
 
 public class Engine implements FuelCapacity {
@@ -8,16 +10,16 @@ public class Engine implements FuelCapacity {
         return new InputData().inputNum();
     }
 
-    public void degreeOne() {
-        int capacityOne = fuelCapacity();
+    public int degreeOneFuelCapacity() {
+        return fuelCapacity();
     }
 
-    public void degreeTwo() {
-        int capacityTwo = fuelCapacity();
+    public int degreeTwoFuelCapacity() {
+        return fuelCapacity();
     }
 
-    public void degreeThree() {
-        int capacityThree = fuelCapacity();
+    public int degreeThreeFuelCapacity() {
+        return fuelCapacity();
     }
 
     @Override

@@ -1,4 +1,7 @@
+package Enum;
+
 public enum Planets {
+
     MARS("Mars", 55757930), MOON("Moon", 384400);
 
     private String planetName;
