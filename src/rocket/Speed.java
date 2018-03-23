@@ -1,5 +1,5 @@
 package rocket;
 
-public interface CalculateSpeed {
+public interface Speed {
     double calculateRocketSpeed(int rocketWeight, int enginePower);
 }
