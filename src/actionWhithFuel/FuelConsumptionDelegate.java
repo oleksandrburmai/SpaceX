@@ -1,5 +1,5 @@
 package actionWhithFuel;
 
-public interface FuelConsumption {
+public interface FuelConsumptionDelegate {
     double fuelConsumption(double rocketSpeed, int rocketWeight);
 }

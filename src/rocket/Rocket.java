@@ -1,8 +1,8 @@
 package rocket;
 
-import actionWhithFuel.FuelConsumption;
+import actionWhithFuel.FuelConsumptionDelegate;
 
-public class Rocket implements FuelConsumption {
+public class Rocket implements FuelConsumptionDelegate {
 
     @Override
     public double fuelConsumption(double rocketSpeed, int rocketWeight) {
