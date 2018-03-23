@@ -2,23 +2,16 @@ import rocket.Engine;
 import rocket.Rocket;
 import rocket.RocketFly;
 
-public class SpaceX implements RocketFly {
+public class SpaceX implements RocketFly, PlanetNameToFly {
 
     @Override
     public String fly(int enginePower, int rocketWeight, String planetName) {
 
         Rocket rocket = new Rocket();
-        Planets planet = null;
 
-        for (Planets planets : Planets.values()) {
-            if (planetName.toUpperCase().equals(planets.getPlanetName().toUpperCase())) {
-                planet = planets;
-            }
-        }
-
-        if (planet != null) {
+        if (findPlanetToFly(planetName) != null) {
             double needFuel = (rocket.fuelConsumption(rocket.new Cabin().calculateRocketSpeed(rocketWeight, enginePower),
-                    rocketWeight) * planet.getDistance());
+                    rocketWeight) * findPlanetToFly(planetName).getDistance());
             if (needFuel < new Engine().engineFuelCapacity()) {
                 return "Your fly to " + planetName + " is successful";
             } else {
