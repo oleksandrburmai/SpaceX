@@ -4,15 +4,10 @@ import actionWhithFuel.FuelCapacity;
 
 public class Engine implements FuelCapacity {
 
-    public int degreeOneFuelCapacity() {
-        return fuelCapacity();
-    }
-
-    public int degreeTwoFuelCapacity() {
-        return fuelCapacity();
-    }
-
-    public int degreeThreeFuelCapacity() {
-        return fuelCapacity();
+    public int engineFuelCapacity() {
+        int degreeOneFuelCapacity = fuelCapacity();
+        int degreeTwoFuelCapacity = fuelCapacity();
+        int degreeThreeFuelCapacity = fuelCapacity();
+        return degreeOneFuelCapacity + degreeTwoFuelCapacity + degreeThreeFuelCapacity;
     }
 }
