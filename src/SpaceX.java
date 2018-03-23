@@ -1,3 +1,4 @@
+import rocket.Engine;
 import rocket.Rocket;
 import rocket.RocketFly;
 
@@ -16,9 +17,9 @@ public class SpaceX implements RocketFly {
         }
 
         if (planet != null) {
-            double needFuel = (rocket.fuelConsumption(rocket.calculateRocketSpeed(rocketWeight, enginePower),
+            double needFuel = (rocket.fuelConsumption(rocket.new Cabin().calculateRocketSpeed(rocketWeight, enginePower),
                     rocketWeight) * planet.getDistance());
-            if (needFuel < new Rocket().new Cabin().totalFuelCapacity()) {
+            if (needFuel < new Engine().engineFuelCapacity()) {
                 return "Your fly to " + planetName + " is successful";
             } else {
                 return "Your fly to " + planetName + " is not successful";
