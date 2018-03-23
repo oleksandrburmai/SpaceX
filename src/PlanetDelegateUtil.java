@@ -1,4 +1,4 @@
-interface IPlanet {
+interface PlanetDelegateUtil {
 
     static Planets findPlanetToFly(String planetName) {
         for (Planets planets : Planets.values()) {

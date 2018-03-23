@@ -9,9 +9,9 @@ public class SpaceX implements RocketFly {
 
         Rocket rocket = new Rocket();
 
-        if (IPlanet.findPlanetToFly(planetName) != null) {
+        if (PlanetDelegateUtil.findPlanetToFly(planetName) != null) {
             double needFuel = (rocket.fuelConsumption(rocket.new Cabin().calculateRocketSpeed(rocketWeight, enginePower),
-                    rocketWeight) * IPlanet.findPlanetToFly(planetName).getDistance());
+                    rocketWeight) * PlanetDelegateUtil.findPlanetToFly(planetName).getDistance());
             if (needFuel < new Engine().engineFuelCapacity()) {
                 return "Your fly to " + planetName + " is successful";
             } else {
