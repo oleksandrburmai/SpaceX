@@ -2,23 +2,18 @@ package rocket;
 
 import actionWhithFuel.FuelConsumption;
 
-public class Rocket implements Speed, FuelConsumption {
-
-    @Override
-    public double calculateRocketSpeed(int rocketWeight, int enginePower) {
-        return (enginePower / rocketWeight) * 1000;
-    }
+public class Rocket implements FuelConsumption {
 
     @Override
     public double fuelConsumption(double rocketSpeed, int rocketWeight) {
         return rocketWeight / rocketSpeed;
     }
 
-    public class Cabin {
+    public class Cabin implements Speed {
 
-        public double totalFuelCapacity() {
-            Engine engine = new Engine();
-            return engine.degreeOneFuelCapacity() + engine.degreeThreeFuelCapacity() + engine.degreeTwoFuelCapacity();
+        @Override
+        public double calculateRocketSpeed(int rocketWeight, int enginePower) {
+            return (enginePower / rocketWeight) * 1000;
         }
     }
 }
