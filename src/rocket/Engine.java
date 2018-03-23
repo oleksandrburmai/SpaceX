@@ -2,8 +2,6 @@ package rocket;
 
 import actionWhithFuel.FuelCapacity;
 
-import java.util.Random;
-
 public class Engine implements FuelCapacity {
 
     public int degreeOneFuelCapacity() {
@@ -16,11 +14,5 @@ public class Engine implements FuelCapacity {
 
     public int degreeThreeFuelCapacity() {
         return fuelCapacity();
-    }
-
-    @Override
-    public int fuelCapacity() {
-        Random random = new Random();
-        return random.nextInt(100000 - 10000);
     }
 }
