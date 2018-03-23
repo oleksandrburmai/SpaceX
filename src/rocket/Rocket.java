@@ -2,7 +2,7 @@ package rocket;
 
 import actionWhithFuel.FuelConsumption;
 
-public class Rocket implements CalculateSpeed, FuelConsumption {
+public class Rocket implements Speed, FuelConsumption {
 
     @Override
     public double calculateRocketSpeed(int rocketWeight, int enginePower) {
