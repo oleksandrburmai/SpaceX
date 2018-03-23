@@ -1,8 +1,8 @@
 import rocket.Engine;
 import rocket.Rocket;
-import rocket.RocketFly;
+import rocket.RocketFlyDelegate;
 
-public class SpaceX implements RocketFly {
+public class SpaceX implements RocketFlyDelegate {
 
     @Override
     public String fly(int enginePower, int rocketWeight, String planetName) {
