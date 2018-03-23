@@ -10,6 +10,10 @@ public enum Planets {
         this.distance = distance;
     }
 
+    public String getPlanetName() {
+        return this.planetName;
+    }
+
     public int getDistance() {
         return this.distance;
     }
