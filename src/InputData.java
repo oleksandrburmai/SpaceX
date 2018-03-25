@@ -38,7 +38,7 @@ public class InputData {
     }
 
     private FuelTanks inputFuelTankName() {
-        System.out.println("Enter name of fuel tank which you want to choice: Name (height, width, weight)" +
+        System.out.println("Enter name of fuel tank which you want to choice to this engine: Name (height, width, weight)" +
                 "\nVery large (200, 200, 4000)\n" + "Large (100, 100, 2000)\nMedium (50, 50, 1000)" +
                 "\nSmall (25, 25, 500)\nVery small (10, 10, 200)");
         while (true) {

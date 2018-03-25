@@ -5,7 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
         programReuse();
-        //Rocket rocket=new Rocket(Cabins.ALFA,)
     }
 
     private static void programReuse() {
