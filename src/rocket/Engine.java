@@ -1,10 +1,34 @@
 package rocket;
 
-import actionWhithFuel.FuelCapacity;
+public class Engine {
 
-public class Engine implements FuelCapacity {
+    private int weight;
+    private int power;
+    private double fuelTankSpace;
 
-    public int engineFuelCapacity() {
-        return fuelCapacity() + fuelCapacity() + fuelCapacity();
+    public Engine(MainEngineProperties engineProperties, FuelTanks fuelTanks) {
+        this.weight = engineProperties.getWeight() + fuelTanks.getWeight();
+        this.power = engineProperties.getEnginePower();
+        this.fuelTankSpace = fuelTanks.getCapacity();
+    }
+
+    private double accelerationTill1SpaceSpeed(int rocketWeight) {
+        return 28440 / (this.power / rocketWeight);
+    }
+
+    public double accelerationTill2SpaceSpeed(int rocketWeight) {
+        return 40020 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
+    }
+
+    public int getPower() {
+        return this.power;
+    }
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    public double getFuelTankSpace() {
+        return this.fuelTankSpace;
     }
 }
