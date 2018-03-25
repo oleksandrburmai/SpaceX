@@ -5,10 +5,9 @@ import actionWhithFuel.FuelConsumptionDelegate;
 public class Rocket implements FuelConsumptionDelegate {
 
     private Cabins cabin;
-    private Engine engineOne;
-    private Engine engineTwo;
-    private Engine engineThree;
-
+    private EngineProvider engineOne;
+    private EngineProvider engineTwo;
+    private EngineProvider engineThree;
 
     public Rocket(Cabins cabin, Engine engineOne, Engine engineTwo, Engine engineThree) {
         this.cabin = cabin;

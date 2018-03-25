@@ -1,6 +1,6 @@
 package rocket;
 
-public class Engine {
+public class Engine implements EngineProvider {
 
     private int weight;
     private int power;
@@ -12,15 +12,7 @@ public class Engine {
         this.fuelTankSpace = fuelTanks.getCapacity();
     }
 
-    private double accelerationTill1SpaceSpeed(int rocketWeight) {
-        return 28440.0 / (this.power / rocketWeight);
-    }
-
-    public double accelerationTill2SpaceSpeed(int rocketWeight) {
-        return 40020.0 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
-    }
-
-    public int getPower() {
+    /*public int getPower() {
         return this.power;
     }
 
@@ -28,6 +20,31 @@ public class Engine {
         return this.weight;
     }
 
+    public double getFuelTankSpace() {
+        return this.fuelTankSpace;
+    }*/
+
+    @Override
+    public double accelerationTill1SpaceSpeed(int rocketWeight) {
+        return 28440.0 / (this.power / rocketWeight);
+    }
+
+    @Override
+    public double accelerationTill2SpaceSpeed(int rocketWeight) {
+        return 40020.0 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
+    }
+
+    @Override
+    public int getPower() {
+        return this.power;
+    }
+
+    @Override
+    public int getWeight() {
+        return this.weight;
+    }
+
+    @Override
     public double getFuelTankSpace() {
         return this.fuelTankSpace;
     }
