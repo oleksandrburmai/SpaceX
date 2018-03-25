@@ -6,22 +6,13 @@ public class SpaceX implements FlyDelegate {
     private InputData input = new InputData();
 
     private Rocket constructRocket() {
+        return new Rocket(input.inputCabin(), constructEngine(), constructEngine(), constructEngine());
+    }
 
-        Cabins cabin = input.inputCabinName();
-
-        MainEngineProperties mainEnginePropertiesOne = input.inputMainEnginePropertiesSetName();
+    private Engine constructEngine() {
+        MainEngineProperties mainEnginePropertiesOne = input.inputMainEnginePropertiesSet();
         FuelTanks fuelTankOne = input.checkFuelTank(mainEnginePropertiesOne);
-        Engine engineOne = new Engine(mainEnginePropertiesOne, fuelTankOne);
-
-        MainEngineProperties mainEnginePropertiesTwo = input.inputMainEnginePropertiesSetName();
-        FuelTanks fuelTankTwo = input.checkFuelTank(mainEnginePropertiesTwo);
-        Engine engineTwo = new Engine(mainEnginePropertiesTwo, fuelTankTwo);
-
-        MainEngineProperties mainEnginePropertiesThree = input.inputMainEnginePropertiesSetName();
-        FuelTanks fuelTankThree = input.checkFuelTank(mainEnginePropertiesThree);
-        Engine engineThree = new Engine(mainEnginePropertiesThree, fuelTankThree);
-
-        return new Rocket(cabin, engineOne, engineTwo, engineThree);
+        return new Engine(mainEnginePropertiesOne, fuelTankOne);
     }
 
     @Override
