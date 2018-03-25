@@ -12,18 +12,6 @@ public class Engine implements EngineProvider {
         this.fuelTankSpace = fuelTanks.getCapacity();
     }
 
-    /*public int getPower() {
-        return this.power;
-    }
-
-    public int getWeight() {
-        return this.weight;
-    }
-
-    public double getFuelTankSpace() {
-        return this.fuelTankSpace;
-    }*/
-
     @Override
     public double accelerationTill1SpaceSpeed(int rocketWeight) {
         return 28440.0 / (this.power / rocketWeight);
