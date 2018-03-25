@@ -13,11 +13,11 @@ public class Engine {
     }
 
     private double accelerationTill1SpaceSpeed(int rocketWeight) {
-        return 28440 / (this.power / rocketWeight);
+        return 28440.0 / (this.power / rocketWeight);
     }
 
     public double accelerationTill2SpaceSpeed(int rocketWeight) {
-        return 40020 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
+        return 40020.0 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
     }
 
     public int getPower() {
