@@ -1,3 +1,6 @@
+package utils;
+
+import planet.Planets;
 import rocket.Cabins;
 import rocket.FuelTanks;
 import rocket.MainEngineProperties;

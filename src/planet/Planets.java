@@ -1,3 +1,5 @@
+package planet;
+
 public enum Planets {
 
     MARS("Mars", 78300000), MOON("Moon", 384400), NEPTUNE("Neptune", 4347400000L), URANUS("Uranus", 2721400000L),
