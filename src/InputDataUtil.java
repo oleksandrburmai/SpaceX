@@ -5,6 +5,7 @@ import rocket.MainEngineProperties;
 public class InputDataUtil {
 
     private InputDataUtil() throws IllegalStateException {
+        throw new IllegalStateException("Can't create instance of InputDataUtil");
     }
 
     public static Planets inputPlanet() {
