@@ -4,7 +4,7 @@ import actionWhithFuel.FuelConsumptionDelegate;
 
 public class Rocket implements FuelConsumptionDelegate {
 
-    private Cabins cabin;
+    private CabinProvider cabin;
     private EngineProvider engineOne;
     private EngineProvider engineTwo;
     private EngineProvider engineThree;

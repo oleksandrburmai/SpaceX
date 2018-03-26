@@ -1,6 +1,6 @@
 package rocket;
 
-public enum Cabins {
+public enum Cabins implements CabinProvider {
 
     ALFA("Alfa", 100, 20, 1000), BETA("Beta", 20, 10, 100), GAMA("Gama", 10, 10, 80),
     DELTA("Delta", 40, 25, 150), ZETA("Zeta", 50, 10, 200);
@@ -15,14 +15,17 @@ public enum Cabins {
         this.capacity = (int) (Math.PI * height * Math.pow((width / 2), 2) / 1000);
     }
 
+    @Override
     public int getWeight() {
         return this.weight;
     }
 
+    @Override
     public int getCapacity() {
         return this.capacity;
     }
 
+    @Override
     public String getCabinName() {
         return this.cabinName;
     }
