@@ -3,15 +3,14 @@ import rocket.*;
 
 public class SpaceX implements FlyDelegate {
 
-    private InputData input = new InputData();
 
     private Rocket constructRocket() {
-        return new Rocket(input.inputCabin(), constructEngine(), constructEngine(), constructEngine());
+        return new Rocket(InputDataUtil.inputCabin(), constructEngine(), constructEngine(), constructEngine());
     }
 
     private Engine constructEngine() {
-        MainEngineProperties mainEnginePropertiesOne = input.inputMainEnginePropertiesSet();
-        FuelTanks fuelTankOne = input.checkFuelTank(mainEnginePropertiesOne);
+        MainEngineProperties mainEnginePropertiesOne = InputDataUtil.inputMainEnginePropertiesSet();
+        FuelTanks fuelTankOne = InputDataUtil.checkFuelTank(mainEnginePropertiesOne);
         return new Engine(mainEnginePropertiesOne, fuelTankOne);
     }
 
