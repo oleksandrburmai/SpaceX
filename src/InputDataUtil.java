@@ -4,11 +4,15 @@ import rocket.MainEngineProperties;
 
 import java.util.Scanner;
 
-public class InputData {
+public class InputDataUtil {
 
-    private Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    private Planets inputPlanet() {
+    private InputDataUtil() {
+    }
+
+
+    public static Planets inputPlanet() {
         System.out.println("Enter name of the planet which you want to fly:\nMoon, Mercury, Venus, Mars, " +
                 "Jupiter, Saturn, Uranus, Neptune");
         while (true) {
@@ -22,7 +26,7 @@ public class InputData {
         }
     }
 
-    public Cabins inputCabin() {
+    public static Cabins inputCabin() {
         System.out.println("Enter name of cabin which you want to choice: Name (height, width, weight)\n" +
                 "Alfa (100, 20, 1000)\n" + "Beta (20, 10, 100)\nGama (10, 10, 80)\n" +
                 "Delta (40, 25, 150)\nZeta (50, 10, 200)");
@@ -37,7 +41,7 @@ public class InputData {
         }
     }
 
-    private FuelTanks inputFuelTank() {
+    private static FuelTanks inputFuelTank() {
         System.out.println("Enter name of fuel tank which you want to choice to this engine: Name (height, width, weight)" +
                 "\nVery large (200, 200, 4000)\n" + "Large (100, 100, 2000)\nMedium (50, 50, 1000)" +
                 "\nSmall (25, 25, 500)\nVery small (10, 10, 200)");
@@ -52,7 +56,7 @@ public class InputData {
         }
     }
 
-    public MainEngineProperties inputMainEnginePropertiesSet() {
+    public static MainEngineProperties inputMainEnginePropertiesSet() {
         System.out.println("Enter name of engine which you want to choice: Name (height, width, weight," +
                 " enginePower)\n" + "V8 (300, 300, 600, 20000)\n" + "V7 (150, 150, 300, 10000)" +
                 "\nV6 (70,70,140,5000)\nV5 (40,40,80,2500)\nV4 (20,20,40,1250)");
@@ -67,7 +71,7 @@ public class InputData {
         }
     }
 
-    public FuelTanks checkFuelTank(MainEngineProperties mainEngineProperties) {
+    public static FuelTanks checkFuelTank(MainEngineProperties mainEngineProperties) {
         while (true) {
             FuelTanks fuelTank = inputFuelTank();
             if (mainEngineProperties.getSpace() > fuelTank.getCapacity()) {
@@ -78,31 +82,12 @@ public class InputData {
         }
     }
 
-    private int inputNum() {
+    public static int inputNum() {
         while (true) {
             try {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException ex) {
                 System.out.println("You not enter number. Please try again");
-            }
-        }
-    }
-
-    public void programReuse() {
-        SpaceX spaceX = new SpaceX();
-
-        System.out.println(spaceX.fly(inputPlanet()));
-
-        while (true) {
-            System.out.println("If you want construct new rocket enter 1:\n" +
-                    "If you want exit from this program enter 0:");
-            int menuOption = inputNum();
-            if (menuOption == 1) {
-                System.out.println(spaceX.fly(inputPlanet()));
-            } else if (menuOption == 0) {
-                break;
-            } else {
-                System.out.println("Your enter wrong number option. Please try again.");
             }
         }
     }
