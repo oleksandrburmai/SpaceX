@@ -5,34 +5,43 @@ import actionWhithFuel.FuelConsumptionDelegate;
 public class Rocket implements FuelConsumptionDelegate {
 
     private CabinProvider cabin;
-    private EngineProvider engineOne;
-    private EngineProvider engineTwo;
-    private EngineProvider engineThree;
+    private EngineProvider[] engines;
 
-    public Rocket(Cabins cabin, Engine engineOne, Engine engineTwo, Engine engineThree) {
+    public Rocket(Cabins cabin, EngineProvider[] engines) {
         this.cabin = cabin;
-        this.engineOne = engineOne;
-        this.engineTwo = engineTwo;
-        this.engineThree = engineThree;
+        this.engines = engines;
     }
 
-    private int rocketWeight() {
-        return cabin.getWeight() + engineOne.getWeight() + engineTwo.getWeight() + engineThree.getWeight();
+    private int sumRocketWeight() {
+        int weight = 0;
+        for (EngineProvider anEngine : this.engines) {
+            weight += anEngine.getWeight();
+        }
+        return cabin.getWeight() + weight;
     }
-
 
     @Override
-    public double fuelConsumption() {
-        return (engineOne.getPower() + engineTwo.getPower() + engineThree.getPower()) / rocketWeight();
+    public double calculateFuelConsumption() {
+        double totalPower = 0;
+        for (EngineProvider anEngine : this.engines) {
+            totalPower += anEngine.getPower();
+        }
+        return totalPower / sumRocketWeight();
     }
 
     public double totalFuelCapacity() {
-        return engineOne.getFuelTankSpace() + engineTwo.getFuelTankSpace() + engineThree.getFuelTankSpace();
+        double totalFuel = 0;
+        for (EngineProvider anEngine : this.engines) {
+            totalFuel += anEngine.getFuelTankSpace();
+        }
+        return totalFuel;
     }
 
     public double rocketAccelerationTill2SpaceSpeed() {
-        return (engineOne.accelerationTill2SpaceSpeed(rocketWeight()) +
-                engineTwo.accelerationTill2SpaceSpeed(rocketWeight()) +
-                engineThree.accelerationTill2SpaceSpeed(rocketWeight())) / 3;
+        double timeTill2SpaceSpeed = 0;
+        for (EngineProvider anEngine : this.engines) {
+            timeTill2SpaceSpeed += anEngine.accelerationTill2SpaceSpeed(sumRocketWeight());
+        }
+        return timeTill2SpaceSpeed / this.engines.length;
     }
 }

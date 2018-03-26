@@ -7,13 +7,21 @@ public class SpaceX implements FlyDelegate {
 
 
     private Rocket constructRocket() {
-        return new Rocket(InputDataUtil.inputCabin(), constructEngine(), constructEngine(), constructEngine());
+        return new Rocket(InputDataUtil.inputCabin(), constructEngine(InputDataUtil.inputNumberOfEngines()));
     }
 
-    private Engine constructEngine() {
-        MainEngineProperties mainEnginePropertiesOne = InputDataUtil.inputMainEnginePropertiesSet();
-        FuelTanks fuelTankOne = InputDataUtil.checkFuelTank(mainEnginePropertiesOne);
-        return new Engine(mainEnginePropertiesOne, fuelTankOne);
+    private EngineProvider[] constructEngine(int numberOfEngines) {
+
+        EngineProvider engines[] = new Engine[numberOfEngines];
+        MainEngineProperties mainEngineProperties;
+        FuelTanks fuelTank;
+
+        for (int i = 0; i < numberOfEngines; i++) {
+            mainEngineProperties = InputDataUtil.inputMainEnginePropertiesSet();
+            fuelTank = InputDataUtil.checkFuelTank(mainEngineProperties);
+            engines[i] = new Engine(mainEngineProperties, fuelTank);
+        }
+        return engines;
     }
 
     @Override
@@ -21,7 +29,7 @@ public class SpaceX implements FlyDelegate {
 
         Rocket rocket = constructRocket();
 
-        if (rocket.totalFuelCapacity() > planet.getDistance() * rocket.fuelConsumption() / 1000) {
+        if (rocket.totalFuelCapacity() > planet.getDistance() * rocket.calculateFuelConsumption() / 1000) {
             double time = rocket.rocketAccelerationTill2SpaceSpeed() +
                     (planet.getDistance() - Math.pow(rocket.rocketAccelerationTill2SpaceSpeed(), 2) / 2.0) / 40020.0;
             return "Your fly to planet " + planet.getPlanetName() + " is successful\n" +
