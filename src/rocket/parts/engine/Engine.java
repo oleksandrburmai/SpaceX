@@ -1,4 +1,6 @@
-package rocket;
+package rocket.parts.engine;
+
+import rocket.parts.fuel_tank.FuelTanks;
 
 public class Engine implements EngineProvider {
 

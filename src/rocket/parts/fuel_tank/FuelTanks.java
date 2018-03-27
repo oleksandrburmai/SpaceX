@@ -1,4 +1,4 @@
-package rocket;
+package rocket.parts.fuel_tank;
 
 public enum FuelTanks {
 

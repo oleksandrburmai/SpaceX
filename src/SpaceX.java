@@ -1,10 +1,13 @@
 import planet.Planets;
 import rocket.*;
+import rocket.parts.engine.Engine;
+import rocket.parts.engine.EngineProvider;
+import rocket.parts.fuel_tank.FuelTanks;
+import rocket.parts.engine.MainEngineProperties;
 import utils.InputDataUtil;
 
 
 public class SpaceX implements FlyDelegate {
-
 
     private Rocket constructRocket() {
         return new Rocket(InputDataUtil.inputCabin(), constructEngine(InputDataUtil.inputNumberOfEngines()));
@@ -12,7 +15,7 @@ public class SpaceX implements FlyDelegate {
 
     private EngineProvider[] constructEngine(int numberOfEngines) {
 
-        EngineProvider engines[] = new Engine[numberOfEngines];
+        EngineProvider engines[] = new EngineProvider[numberOfEngines];
         MainEngineProperties mainEngineProperties;
         FuelTanks fuelTank;
 

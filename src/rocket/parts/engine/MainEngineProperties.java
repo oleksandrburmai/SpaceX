@@ -1,4 +1,4 @@
-package rocket;
+package rocket.parts.engine;
 
 public enum MainEngineProperties {
 

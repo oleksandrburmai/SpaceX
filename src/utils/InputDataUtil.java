@@ -1,9 +1,9 @@
 package utils;
 
 import planet.Planets;
-import rocket.Cabins;
-import rocket.FuelTanks;
-import rocket.MainEngineProperties;
+import rocket.parts.cabin.Cabins;
+import rocket.parts.fuel_tank.FuelTanks;
+import rocket.parts.engine.MainEngineProperties;
 
 public class InputDataUtil {
 
