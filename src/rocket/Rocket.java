@@ -2,7 +2,6 @@ package rocket;
 
 import fuel.FuelConsumptionDelegate;
 import rocket.parts.cabin.CabinProvider;
-import rocket.parts.cabin.Cabins;
 import rocket.parts.engine.EngineProvider;
 
 public class Rocket implements FuelConsumptionDelegate {
@@ -10,7 +9,7 @@ public class Rocket implements FuelConsumptionDelegate {
     private CabinProvider cabin;
     private EngineProvider[] engines;
 
-    public Rocket(Cabins cabin, EngineProvider[] engines) {
+    public Rocket(CabinProvider cabin, EngineProvider[] engines) {
         this.cabin = cabin;
         this.engines = engines;
     }
@@ -43,7 +42,7 @@ public class Rocket implements FuelConsumptionDelegate {
     public double getRocketAccelerationForSecondSpaceSpeed() {
         double timeTill2SpaceSpeed = 0;
         for (EngineProvider anEngine : this.engines) {
-            timeTill2SpaceSpeed += anEngine.getAccelerationForSecondSpaceSpeed(sumRocketWeight());
+            timeTill2SpaceSpeed += anEngine.getAccelerationForSecondSpaceSpeed();
         }
         return timeTill2SpaceSpeed / this.engines.length;
     }

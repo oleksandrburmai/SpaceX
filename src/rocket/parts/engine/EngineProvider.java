@@ -1,13 +1,24 @@
 package rocket.parts.engine;
 
 public interface EngineProvider {
-    double getAccelerationForFirstSpaceSpeed(int rocketWeight);
 
-    double getAccelerationForSecondSpaceSpeed(int rocketWeight);
+    void calculateAccelerationForFirstSpaceSpeed();
+
+    void calculateAccelerationForSecondSpaceSpeed();
 
     int getPower();
 
     int getWeight();
 
     double getFuelTankSpace();
+
+    int getHeight();
+
+    int getWidth();
+
+    double getAccelerationForFirstSpaceSpeed();
+
+    double getAccelerationForSecondSpaceSpeed();
+
+    double getFuelConsumption();
 }

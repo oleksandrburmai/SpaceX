@@ -1,6 +1,7 @@
 package utils;
 
 import planet.Planets;
+import rocket.parts.cabin.Cabin;
 import rocket.parts.cabin.Cabins;
 import rocket.parts.fuel_tank.FuelTanks;
 import rocket.parts.engine.MainEngineProperties;
@@ -25,7 +26,7 @@ public class InputDataUtil {
         }
     }
 
-    public static Cabins inputCabin() {
+    public static Cabin inputCabin() {
         System.out.println("Enter name of cabin which you want to choice: Name (height, width, weight)\n" +
                 "Alfa (100, 20, 1000)\n" + "Beta (20, 10, 100)\nGama (10, 10, 80)\n" +
                 "Delta (40, 25, 150)\nZeta (50, 10, 200)");
@@ -33,7 +34,7 @@ public class InputDataUtil {
             String cabinName = ScannerUtil.getString();
             for (Cabins cabins : Cabins.values()) {
                 if (cabinName.equalsIgnoreCase(cabins.getCabinName())) {
-                    return cabins;
+                    return new Cabin(cabins);
                 }
             }
             System.out.println("You enter wrong name of the cabin. Please try again:");

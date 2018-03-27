@@ -9,12 +9,16 @@ public enum MainEngineProperties {
     private double space;
     private int weight;
     private int enginePower;
+    private int height;
+    private int width;
 
     MainEngineProperties(String mainEnginePropertiesSetName, int height, int width, int weight, int enginePower) {
         this.mainEnginePropertiesSetName = mainEnginePropertiesSetName;
         this.space = Math.PI * height * Math.pow(width / 2, 2);
         this.weight = weight;
         this.enginePower = enginePower;
+        this.height = height;
+        this.width = width;
     }
 
     public String getMainEnginePropertiesSetName() {
@@ -31,5 +35,13 @@ public enum MainEngineProperties {
 
     public int getEnginePower() {
         return this.enginePower;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public int getWidth() {
+        return this.width;
     }
 }

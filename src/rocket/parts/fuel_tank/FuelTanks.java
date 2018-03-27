@@ -8,11 +8,15 @@ public enum FuelTanks {
     private String fuelTankName;
     private int weight;
     private double capacity;
+    private int height;
+    private int width;
 
     FuelTanks(String fuelTankName, int height, int width, int weight) {
         this.fuelTankName = fuelTankName;
         this.weight = weight;
         this.capacity = Math.PI * height * Math.pow((width / 2), 2);
+        this.height = height;
+        this.width = width;
     }
 
     public double getCapacity() {
@@ -25,5 +29,13 @@ public enum FuelTanks {
 
     public String getFuelTankName() {
         return this.fuelTankName;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public int getWidth() {
+        return this.width;
     }
 }
