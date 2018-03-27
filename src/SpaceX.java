@@ -29,9 +29,9 @@ public class SpaceX implements FlyDelegate {
 
         Rocket rocket = constructRocket();
 
-        if (rocket.totalFuelCapacity() > planet.getDistance() * rocket.calculateFuelConsumption() / 1000) {
-            double time = rocket.rocketAccelerationTill2SpaceSpeed() +
-                    (planet.getDistance() - Math.pow(rocket.rocketAccelerationTill2SpaceSpeed(), 2) / 2.0) / 40020.0;
+        if (rocket.sumTotalFuelCapacity() > planet.getDistance() * rocket.calculateFuelConsumption() / 1000) {
+            double time = rocket.getRocketAccelerationForSecondSpaceSpeed() +
+                    (planet.getDistance() - Math.pow(rocket.getRocketAccelerationForSecondSpaceSpeed(), 2) / 2.0) / 40020.0;
             return "Your fly to planet " + planet.getPlanetName() + " is successful\n" +
                     "And you will spend " + (Math.round(time / 60.0)) + " minutes";
         } else {

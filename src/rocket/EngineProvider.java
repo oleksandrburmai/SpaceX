@@ -1,9 +1,9 @@
 package rocket;
 
 public interface EngineProvider {
-    double accelerationTill1SpaceSpeed(int rocketWeight);
+    double getAccelerationForFirstSpaceSpeed(int rocketWeight);
 
-    double accelerationTill2SpaceSpeed(int rocketWeight);
+    double getAccelerationForSecondSpaceSpeed(int rocketWeight);
 
     int getPower();
 

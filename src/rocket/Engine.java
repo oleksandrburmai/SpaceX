@@ -13,13 +13,13 @@ public class Engine implements EngineProvider {
     }
 
     @Override
-    public double accelerationTill1SpaceSpeed(int rocketWeight) {
+    public double getAccelerationForFirstSpaceSpeed(int rocketWeight) {
         return 28440.0 / (this.power / rocketWeight);
     }
 
     @Override
-    public double accelerationTill2SpaceSpeed(int rocketWeight) {
-        return 40020.0 / ((this.power + accelerationTill1SpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
+    public double getAccelerationForSecondSpaceSpeed(int rocketWeight) {
+        return 40020.0 / ((this.power + getAccelerationForFirstSpaceSpeed(rocketWeight) * 0.5) / rocketWeight);
     }
 
     @Override

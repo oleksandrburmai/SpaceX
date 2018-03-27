@@ -1,6 +1,6 @@
 package rocket;
 
-import actionWhithFuel.FuelConsumptionDelegate;
+import fuel.FuelConsumptionDelegate;
 
 public class Rocket implements FuelConsumptionDelegate {
 
@@ -29,7 +29,7 @@ public class Rocket implements FuelConsumptionDelegate {
         return totalPower / sumRocketWeight();
     }
 
-    public double totalFuelCapacity() {
+    public double sumTotalFuelCapacity() {
         double totalFuel = 0;
         for (EngineProvider anEngine : this.engines) {
             totalFuel += anEngine.getFuelTankSpace();
@@ -37,10 +37,10 @@ public class Rocket implements FuelConsumptionDelegate {
         return totalFuel;
     }
 
-    public double rocketAccelerationTill2SpaceSpeed() {
+    public double getRocketAccelerationForSecondSpaceSpeed() {
         double timeTill2SpaceSpeed = 0;
         for (EngineProvider anEngine : this.engines) {
-            timeTill2SpaceSpeed += anEngine.accelerationTill2SpaceSpeed(sumRocketWeight());
+            timeTill2SpaceSpeed += anEngine.getAccelerationForSecondSpaceSpeed(sumRocketWeight());
         }
         return timeTill2SpaceSpeed / this.engines.length;
     }
