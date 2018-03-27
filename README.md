@@ -11,4 +11,7 @@ Main-Class: Main
 ```
 5. jar cmf manifest.mf App.jar *.
 # Example of run app:
+```
 java -jar App.jar
+java Main
+```
