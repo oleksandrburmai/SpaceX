@@ -1,8 +1,8 @@
 import utils.InputDataUtil;
 
-public class Reiterative {
+public class App {
 
-    public void reuseProgram() {
+    public void runProgram() {
         SpaceX spaceX = new SpaceX();
 
         System.out.println(spaceX.fly(InputDataUtil.inputPlanet()));
