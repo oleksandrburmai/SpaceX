@@ -83,23 +83,13 @@ public class InputDataUtil {
 
     public static int inputNumberOfEngines() {
         System.out.println("Enter number of engines. You can not enter less then 3 engine and not more then 5");
-        int numberOfEngines = inputNum();
+        int numberOfEngines = ScannerUtil.getInt();
         while (true) {
             if (numberOfEngines >= 3 && numberOfEngines <= 5) {
                 return numberOfEngines;
             } else {
                 System.out.println("Enter not less then 3 engine and not more then 5");
-                numberOfEngines = inputNum();
-            }
-        }
-    }
-
-    public static int inputNum() {
-        while (true) {
-            try {
-                return Integer.parseInt(ScannerUtil.getString());
-            } catch (NumberFormatException ex) {
-                System.out.println("You not enter number. Please try again");
+                numberOfEngines = ScannerUtil.getInt();
             }
         }
     }
