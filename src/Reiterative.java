@@ -2,7 +2,7 @@ import utils.InputDataUtil;
 
 public class Reiterative {
 
-    public void programReuse() {
+    public void reuseProgram() {
         SpaceX spaceX = new SpaceX();
 
         System.out.println(spaceX.fly(InputDataUtil.inputPlanet()));

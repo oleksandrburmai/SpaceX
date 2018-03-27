@@ -1,4 +1,4 @@
-package rocket;
+package rocket.parts.cabin;
 
 public interface CabinProvider {
     int getWeight();

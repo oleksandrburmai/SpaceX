@@ -1,6 +1,9 @@
 package rocket;
 
 import fuel.FuelConsumptionDelegate;
+import rocket.parts.cabin.CabinProvider;
+import rocket.parts.cabin.Cabins;
+import rocket.parts.engine.EngineProvider;
 
 public class Rocket implements FuelConsumptionDelegate {
 
