@@ -20,4 +20,14 @@ public class ScannerUtil {
     public static String getString() {
         return getScanner().nextLine();
     }
+
+    public static int getInt() {
+        while (true) {
+            try {
+                return Integer.parseInt(getString());
+            } catch (NumberFormatException ex) {
+                System.out.println("You not enter number. Please try again");
+            }
+        }
+    }
 }

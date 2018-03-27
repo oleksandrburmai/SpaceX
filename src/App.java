@@ -1,4 +1,5 @@
 import utils.InputDataUtil;
+import utils.ScannerUtil;
 
 public class App {
 
@@ -10,7 +11,7 @@ public class App {
         while (true) {
             System.out.println("If you want construct new rocket enter 1:\n" +
                     "If you want exit from this program enter 0:");
-            int menuOption = InputDataUtil.inputNum();
+            int menuOption = ScannerUtil.getInt();
             if (menuOption == 1) {
                 System.out.println(spaceX.fly(InputDataUtil.inputPlanet()));
             } else if (menuOption == 0) {
