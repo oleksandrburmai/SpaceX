@@ -1,4 +1,4 @@
-package rocket.parts.cabin;
+package rocket.part.cabin;
 
 public enum Cabins {
 

@@ -1,5 +1,5 @@
-import utils.InputDataUtil;
-import utils.ScannerUtil;
+import util.InputDataUtil;
+import util.ScannerUtil;
 
 public class App {
 

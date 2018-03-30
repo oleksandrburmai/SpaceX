@@ -1,10 +1,10 @@
 import planet.Planets;
 import rocket.*;
-import rocket.parts.engine.Engine;
-import rocket.parts.engine.EngineProvider;
-import rocket.parts.fuel_tank.FuelTanks;
-import rocket.parts.engine.MainEngineProperties;
-import utils.InputDataUtil;
+import rocket.part.engine.Engine;
+import rocket.part.engine.EngineProvider;
+import rocket.part.fuel_tank.FuelTanks;
+import rocket.part.engine.MainEngineProperties;
+import util.InputDataUtil;
 
 
 public class SpaceX implements FlyDelegate {

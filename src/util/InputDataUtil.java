@@ -1,10 +1,10 @@
-package utils;
+package util;
 
 import planet.Planets;
-import rocket.parts.cabin.Cabin;
-import rocket.parts.cabin.Cabins;
-import rocket.parts.fuel_tank.FuelTanks;
-import rocket.parts.engine.MainEngineProperties;
+import rocket.part.cabin.Cabin;
+import rocket.part.cabin.Cabins;
+import rocket.part.fuel_tank.FuelTanks;
+import rocket.part.engine.MainEngineProperties;
 
 public class InputDataUtil {
 

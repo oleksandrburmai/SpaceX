@@ -1,4 +1,4 @@
-package rocket.parts.engine;
+package rocket.part.engine;
 
 public interface EngineProvider {
 
